@@ -1,0 +1,143 @@
+/* Reset some default browser styles */
+body, h1, p, form, input, label, select, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and spacing to the body */
+body {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-family: Arial, Georgia, 'Times New Roman', Times, serif, sans-serif;
+    text-align: left(20%);
+}
+
+/* Target the <h1> element within the .form-container and change the font family */
+.form-container h1 {
+    font-family: Verdana, sans-serif;
+    font-size: 4.25rem;
+}
+
+/* Center the form within a container */
+.form-container {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form labels */
+label {
+    display: block;
+    margin-bottom: 0.3125rem;
+}
+
+/* Style the text input fields */
+input[type="text"],
+input[type="date"],
+select {
+    width: 95%;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.1875rem;
+    font-size: 1rem;
+}
+
+/* Style the submit and reset buttons */
+button,
+input[type="submit"],
+input[type="reset"] {
+    padding: 0.625rem 1.25rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0.1875rem;
+    cursor: pointer;
+    margin-right: 0.625rem;
+    transition: background-color 0.5s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+/* Style the download link */
+a.download-link {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.1875rem;
+    margin-top: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+a.download-link:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+/* Style pop-up messages */
+.popup {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.1875rem;
+    align-items: center;
+}
+
+/* Responsive styles for smaller screens (mobile) */
+@media (max-width: 768px) {
+    /* Adjust the container width for mobile */
+    .form-container {
+        max-width: 100%;
+    }
+
+    /* Adjust padding and font size for buttons on mobile */
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Style the back button */
+.back-button {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+}
+
+.back-button a {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0.1875rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+

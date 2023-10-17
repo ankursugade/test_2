@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Editor</title>
+    <style>
+        #canvas {
+            width: 100%;
+            max-width: 1500px;
+            height: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1500" height="1500"></canvas>
+    <input type="color" id="colorPicker" value="#0000FF">
+    <button id="clearButton">Clear</button>
+    <button id="submitButton">Submit</button>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+        const colorPicker = document.getElementById("colorPicker");
+        const clearButton = document.getElementById("clearButton");
+        const submitButton = document.getElementById("submitButton");
+
+        let drawing = false;
+
+        canvas.addEventListener("touchstart", startDrawing);
+        canvas.addEventListener("touchmove", draw);
+        canvas.addEventListener("touchend", stopDrawing);
+
+        function startDrawing(e) {
+            drawing = true;
+            context.beginPath();
+            context.moveTo(e.touches[0].clientX, e.touches[0].clientY);
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            context.strokeStyle = colorPicker.value;
+            context.lineWidth = 5;
+            context.lineTo(e.touches[0].clientX, e.touches[0].clientY);
+            context.stroke();
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            context.closePath();
+        }
+
+        clearButton.addEventListener("click", () => {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        submitButton.addEventListener("click", () => {
+            const imageDataURL = canvas.toDataURL("image/png");
+            localStorage.setItem("editedImage", imageDataURL);
+            window.location.href = "02_observation_image.html";
+        });
+    </script>
+</body>
+</html>
+
+

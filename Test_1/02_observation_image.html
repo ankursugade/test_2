@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Observation Image</title>
+</head>
+<body>
+    <form id="form">
+        <label for="uploadfile">Upload Image:</label>
+        <br>
+        <input name="file" id="uploadfile" type="file" accept="image/*">
+    </form>
+    
+    <script>
+        // Retrieve the edited image from localStorage
+        const editedImage = localStorage.getItem("editedImage");
+
+        // Check if there's an edited image to display
+        if (editedImage) {
+            const form = document.getElementById("form");
+            const uploadfile = document.getElementById("uploadfile");
+
+            // Create an image element to display the edited image
+            const image = new Image();
+            image.src = editedImage;
+
+            // Add the image to the form
+            form.appendChild(image);
+        }
+    </script>
+</body>
+</html>
