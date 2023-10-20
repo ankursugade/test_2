@@ -85,7 +85,7 @@ submitButton.addEventListener("click", e => {
         formData.append('editedImage', blob, fileName);
 
         // Define the URL where the file will be uploaded using Google Apps Script
-        const uploadURL = 'https://script.google.com/macros/s/AKfycbxDNHL8-FbieIc07Zwk4F47UJqIQRyo-1Wtm6ZD6k8_fTOd0zB0j0M_7-r7iODd6VqY6Q/exec';
+        const uploadURL = 'https://script.google.com/macros/s/AKfycbzpxU0Kfq_GXTxLdY_dktmQ92MefswRpmkOACxp9b6SIX-SEzN1GpmH8Xwmr0HFjxLeKQ/exec';
 
         // Create query parameters for the request, including the filename and MIME type
         const qs = new URLSearchParams({ filename: fileName, mimeType: 'image/png' });
